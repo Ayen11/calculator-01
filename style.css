@@ -1,0 +1,16 @@
+#container {
+    width: 600px;
+    height: 600px;
+    background-color: beige;
+    display: inline-grid;
+    border: 1px black solid;
+    margin: 2rem;
+};
+
+.border {
+    justify-content: center;
+};
+
+.button {
+    font: size 50px;%;
+};
