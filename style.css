@@ -4,13 +4,33 @@
     background-color: beige;
     display: inline-grid;
     border: 1px black solid;
-    margin: 2rem;
-};
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    grid-template-rows: repeat(5, minmax(0,1fr));
+    margin-left: auto;
+    margin-right: auto;
+}
 
-.border {
-    justify-content: center;
-};
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0);
+}
 
 .button {
-    font: size 50px;%;
-};
+    font-size: xx-large;
+}
+
+.body {
+    background-color: rgb(15, 0, 82);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 100px;
+}
+
+#display {
+    background-color: aqua;
+}
