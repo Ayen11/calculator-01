@@ -1,34 +1,69 @@
 let result = 0;
 let aa = "0";
 let bb = "0";
-let op = "divide"
-let firstNumber = true;
+let op = "+"
+let firstNumberBool = true;
+
 
 //******************************************** */
-// setup operaator numbers
+//setup display
+const firstNumRef = document.querySelector('#firstNum');
+firstNumRef.textContent = aa;
+
+const opRef = document.querySelector('#op');
+opRef.textContent = op;
+
+const secondNumRef = document.querySelector("#secondNum");
+secondNumRef.textContent = bb;
+
+const resultRef = document.querySelector("#result");
+resultRef.textContent = result;
+
+
+
+
+//******************************************** */
+// setup operator numbers
 const plusBtn = document.querySelector('#plus');
 plusBtn.addEventListener("click", () => {
-    op = "plus";
-    alert(op);
+    op = "+";
+    opRef.textContent = op;
 });
 
 const minusBtn = document.querySelector('#minus');
 minusBtn.addEventListener("click", () => {
-    op = "minus";
-    alert(op);
+    op = "-";
+    opRef.textContent = op;
 });
 
 const multiplyBtn = document.querySelector('#multiply');
 multiplyBtn.addEventListener("click", () => {
-    op = "multiply";
-    alert(op);
+    op = "*";
+    opRef.textContent = op;
 });
 
 const divideBtn = document.querySelector('#divide');
 divideBtn.addEventListener("click", () => {
-    op = "divide";
-    alert(op);
+    op = "/";
+    opRef.textContent = op;
 });
+
+
+//******************************************** */
+// setup extra functions
+
+const clearBtn = document.querySelector("#clear")
+clearBtn.addEventListener("click", () =>{
+    aa = "";
+    bb = "";
+    op = "";
+    result = "";
+    resultRef.textContent = result; 
+    secondNumRef.textContent = bb;
+    firstNumRef.textContent = aa;
+    opRef.textContent = op;
+});
+
 
 //******************************************** */
 //set up numbers buttons
@@ -80,22 +115,22 @@ nineBtn.addEventListener("click", () => {
 function operate (a, b, operator) {
     a = parseInt(a);
     b = parseInt(b);
-    firstNumber = false;
-    if (operator == "plus") {
+    firstNumberBool = false;
+    if (operator == "+") {
         result = a + b;
-        alert(result)
+        resultRef.textContent = result;
     }
-    else if (operator == "minus") {
+    else if (operator == "-") {
         result = a - b;
-        alert(result)
+        resultRef.textContent = result;
     }
-    else if (operator == "multiply") {
+    else if (operator == "*") {
         result = a * b;
-        alert(result)
+        resultRef.textContent = result;
     }
-    else if (operator == "divide") {
+    else if (operator == "/") {
         result = a / b;
-        alert(result)
+        resultRef.textContent = result;
     }
     
 };
@@ -103,19 +138,21 @@ function operate (a, b, operator) {
 //******************************************** */
 //add a number
 function addNumber(number) {
-    if (firstNumber == true) {
+    if (firstNumberBool == true) {
         aa = + number;
-        alert("aa" + aa);
+        firstNumRef.textContent = aa;
         }
         else {
         bb = + number;
-        alert("bb" + bb);
+        secondNumRef.textContent = bb;
         };
-        return firstNumber = false;
+        return firstNumberBool = false;
 };
 
+//******************************************** */
+//calculate the equation - adding the equal button
 const equalBtn = document.querySelector('#equal');
 equalBtn.addEventListener("click", () => {
     result = operate(aa,bb,op);
-    return firstNumber = true;
+    return firstNumberBool = true;
 });
