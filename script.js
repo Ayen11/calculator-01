@@ -1,7 +1,7 @@
 let result = 0;
-let aa = "0";
-let bb = "0";
-let op = "+"
+let aa = "";
+let bb = "";
+let op = ""
 let firstNumberBool = true;
 
 
@@ -28,27 +28,34 @@ const plusBtn = document.querySelector('#plus');
 plusBtn.addEventListener("click", () => {
     op = "+";
     opRef.textContent = op;
+    return firstNumberBool = false;
 });
 
 const minusBtn = document.querySelector('#minus');
 minusBtn.addEventListener("click", () => {
     op = "-";
     opRef.textContent = op;
+    return firstNumberBool = false;
 });
 
 const multiplyBtn = document.querySelector('#multiply');
 multiplyBtn.addEventListener("click", () => {
     op = "*";
     opRef.textContent = op;
+    return firstNumberBool = false;
 });
 
 const divideBtn = document.querySelector('#divide');
 divideBtn.addEventListener("click", () => {
     op = "/";
     opRef.textContent = op;
+    return firstNumberBool = false;
 });
 
-
+const percentBtn = document.querySelector('#percent');
+percentBtn.addEventListener("click", () => {
+    operate(aa, 100, "/")
+});
 //******************************************** */
 // setup extra functions
 
@@ -108,6 +115,17 @@ nineBtn.addEventListener("click", () => {
     addNumber("9")
 });
 
+const dotBtn = document.querySelector('.dot');
+dotBtn.addEventListener("click", () => {
+    if (aa == "" || bb == "") {
+    addNumber("0");
+    addNumber(".");
+    }
+    else {
+        addNumber(".")
+    }
+});
+
 
 
 //******************************************** */
@@ -139,14 +157,13 @@ function operate (a, b, operator) {
 //add a number
 function addNumber(number) {
     if (firstNumberBool == true) {
-        aa = + number;
+        aa = aa + number;
         firstNumRef.textContent = aa;
         }
         else {
-        bb = + number;
+        bb = bb + number;
         secondNumRef.textContent = bb;
         };
-        return firstNumberBool = false;
 };
 
 //******************************************** */

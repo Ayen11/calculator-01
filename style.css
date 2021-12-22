@@ -1,50 +1,71 @@
+.superContainer {
+    width: 99vw;
+    height: 99vh;
+    background-color: rgb(24, 24, 24);
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 1fr minmax(500px, 1fr) 100px;
+    
+    
+
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+
+
+
 
 #container {
-    width: 600px;
-    height: 600px;
-    background-color: beige;
+    
+    
     display: inline-grid;
-    border: 1px black solid;
+    border: 1px rgb(51, 51, 51) solid;
     grid-template-columns: repeat(4, minmax(0,1fr));
     grid-template-rows: repeat(5, minmax(0,1fr));
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    left: 35%;
-    top:30%;
+    grid-column-start:2 ;
+    grid-column-end: 3;
+    grid-row-start:3 ;
+    grid-row-end: 4;
 }
 
-main {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 50px;
-    max-width: 550px;
-    max-height: 200px;
-    margin: 0 auto;
-    background-color: rgb(82, 82, 82);
-    padding: 2px 20px 1px 20px;
-}
 
 button {
+    font-size: xxx-large;
+    background-color: #000000;
+    border-color: #000000;
+    color: rgb(255, 255, 249);
+}
+
+.op {
+    color: rgb(255, 106, 0);
     font-size: xx-large;
-    background-color: #d1d1d1;
-    border-color: #d1d1d1;
 }
-
-body {
-    background-color: #f3f3f3;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    margin-bottom: 100px;
-}
-
-.display {
+.screen {
+    display: flex;
     text-align: center;
     font-size: 50px;
     color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    grid-column-start:2 ;
+    grid-column-end: 3;
+    grid-row-start:2 ;
+    grid-row-end: 3;
+    padding: 35px;
 }
 
 .header {
-    padding: 50px 0;
+    color: cornsilk;
+    grid-column-start:1 ;
+    grid-column-end: 4;
+    grid-row-start:1 ;
+    grid-row-end: 2;
+}
+
+.display {
+    flex: 0.1;
 }
