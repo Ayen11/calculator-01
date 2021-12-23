@@ -26,8 +26,8 @@ resultRef.textContent = result;
 // setup operator numbers
 const plusBtn = document.querySelector('#plus');
 plusBtn.addEventListener("click", () => {
-    op = "+";
-    opRef.textContent = op;
+        op = "+";
+        opRef.textContent = op;
     return firstNumberBool = false;
 });
 
